@@ -1,11 +1,16 @@
 package id.ac.unhas.todolist
 
 import android.app.AlertDialog
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +21,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_todo.view.*
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        var isSortByDateCreated = true
+    }
 
     private lateinit var todoViewModel: ToDoViewModel
     private lateinit var todoAdapter: ToDoAdapter
@@ -241,5 +250,29 @@ class MainActivity : AppCompatActivity() {
     private fun setProgressbarVisibility(state: Boolean) {
         if (state) progressbar.visibility = View.VISIBLE
         else progressbar.visibility = View.INVISIBLE
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_sort -> true
+            R.id.action_sort_date_created -> {
+                isSortByDateCreated = true
+                refreshData()
+                true
+            }
+            R.id.action_sort_due_date -> {
+                isSortByDateCreated = false
+                refreshData()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
