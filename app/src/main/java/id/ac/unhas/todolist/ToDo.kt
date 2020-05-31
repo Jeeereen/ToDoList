@@ -1,4 +1,4 @@
-package id.ac.unhas.finaltodolist
+package id.ac.unhas.todolist
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
