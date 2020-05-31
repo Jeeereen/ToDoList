@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     tools:text="Created at 01/01/2020"
-                    android:textColor="@color/colorGray"
+                    android:textColor="@color/colorBlue"
                     android:textSize="12sp" />
                 <TextView
                     android:id="@+id/tv_due_date"
@@ -43,7 +43,7 @@
                     android:layout_weight="1"
                     tools:text="Due 01/01/2020"
                     android:gravity="end"
-                    android:textColor="@color/colorGray"
+                    android:textColor="@color/colorBlue"
                     android:textSize="12sp"/>
             </LinearLayout>
 
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="This is my to do "
-                android:textColor="@color/colorDarkGray"
+                android:textColor="@color/colorDarkBlue"
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:textStyle="bold"
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="This is my note "
-                android:textColor="@color/colorGray"
+                android:textColor="@color/colorBlue"
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:textSize="12sp"/>
